@@ -17,10 +17,12 @@ export class CameraProvider {
 
   capturar(callback) {
     const options: CameraOptions = {
-      quality: 100,
+      quality: 75,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      targetWidth: 500,
+      targetHeight: 500,
     }
 
     this.camera.getPicture(options).then((imageData) => {
