@@ -1,0 +1,48 @@
+<!--
+  Generated template for the CadastroExamePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cadastrar Exame</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label color="primary" floating>CRM médico</ion-label>
+        <ion-input [(ngModel)]="documento.medico"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-1>
+      <ion-icon style="margin-top: 40px" ios="ios-help" md="md-help" (click)="presentPopover($event)"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-item>
+    <ion-label>Data de exame
+    </ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY  HH:mm" [(ngModel)]="documento.data"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-row>
+      <ion-col col-9>
+        <h2>Exame</h2>
+      </ion-col>
+      <ion-col>
+        <a (click)="capturar()">Capturar</a>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item>
+    <ion-img width="500" height="300" src={{documento.img}}></ion-img>
+  </ion-item>
+
+  <button ion-button full style="margin-top: 50px" (click)="enviar()">Enviar</button>
+</ion-content>
