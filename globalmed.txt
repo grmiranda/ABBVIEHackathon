@@ -1,0 +1,18 @@
+encontre médicos e clínicas associadas.
+API disponível para ser integrada ao sistema do hospital/clínica
+
+CLIENTE----------------------------------------------------------------APP
+Cadastro de consultas e receitas de medicamentos.(link do paciente com o médico)
+Cadastro de exames médicos.
+Visualização de informações do cliente de forma offline
+Codigo de acesso = CPF
+Cadastrar 1 e 2 por meio de foto
+
+MEDICO--------------------------------------------------------------WEB
+Cadastro de consultas e receitas de medicamentos (via código)
+visualizar informações do cliente (via código)
+comentar consultas feitas por ele
+viualizar atendimentos feitos
+
+GLOBALMED
+
