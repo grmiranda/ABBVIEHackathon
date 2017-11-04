@@ -21,10 +21,10 @@
         <nav class="navbar bg-primary-gradient col-lg-12 col-12 p-0 fixed-top navbar-inverse d-flex flex-row">
             <div class="bg-white text-center navbar-brand-wrapper">
                 <a class="navbar-brand brand-logo" href="#">
-                    <img src="../images/logo_star_black.png" />
+                    <img src="../images/logoA.png" />
                 </a>
                 <a class="navbar-brand brand-logo-mini" href="#">
-                    <img src="../images/logo_star_mini.jpg" alt="">
+                    <img src="../images/icon.png" alt="">
                 </a>
             </div>
             <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -132,26 +132,25 @@
                                                                 <th>
                                                                     <i></i> Especialista </th>
                                                                 <th>
-                                                                    <th>
-                                                                        <i></i> Data </th>
-                                                                    <th>
-                                                                        <i class="fa fa-user-o"></i> Medico</th>
-                                                                    <th>
-                                                                        <i></i> Exame </th>
-                                                                    <th>
-                                                                        <i></i> Medicamentos</th>
+                                                                    <i></i> Data </th>
+                                                                <th>
+                                                                    <i class="fa fa-user-o"></i> Medico</th>
+                                                                <th>
+                                                                    <i></i> Exame </th>
+                                                                <th>
+                                                                    <i></i> Medicamentos</th>
 
-                                                                    <th>
-                                                                        <i></i> Receita</th>
-                                                                    <th></th>
+                                                                <th>
+                                                                    <i></i> Receita</th>
+                                                                <th></th>
                                                             </tr>
                                                         </thead>
 
                                                         <tbody v-for="documentoAtual of documentos">
                                                             <!--<h5 class="centered">contanome</h5>-->
                                                             <td>
-                                                                    {{documentoAtual.especialista}}
-                                                                </td>
+                                                                {{documentoAtual.especialista}}
+                                                            </td>
                                                             <td>
                                                                 {{new Date(documentoAtual.data).toLocaleDateString()}}
                                                             </td>
@@ -159,14 +158,39 @@
                                                                 {{documentoAtual.medico}}
                                                             </td>
                                                             <td>
-                                                                <img :src="documentoAtual.exame" height="150" />
+                                                                <!-- H1K7P -->
+                                                                <div v-if="documentoAtual.exame">
+                                                                    <a v-if="!documentoAtual.exameShow" @click="selectExame(documentoAtual)">Exibir</a>
+                                                                    <a v-else>
+                                                                        <img :src="documentoAtual.exame" height="150" />
+                                                                    </a>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <a> Nenhum Cadastrado</a>
+                                                                </div>
                                                             </td>
                                                             <td>
-                                                                <img :src="documentoAtual.medicamentos" height="150" />
+                                                                <div v-if="documentoAtual.medicamentos">
+                                                                    <a v-if="!documentoAtual.medicamentoShow" @click="selectMedicamento(documentoAtual)">Exibir</a>
+                                                                    <a v-else>
+                                                                        <img :src="documentoAtual.medicamentos" height="150" />
+                                                                    </a>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <a> Nenhum Cadastrado</a>
+                                                                </div>
                                                             </td>
 
                                                             <td>
-                                                                <img :src="documentoAtual.receita" height="150" />
+                                                                <div v-if="documentoAtual.receita">
+                                                                    <a v-if="!documentoAtual.receitaShow" @click="selectReceita(documentoAtual)">Exibir</a>
+                                                                    <a v-else>
+                                                                        <img :src="documentoAtual.receita" height="150" />
+                                                                    </a>
+                                                                </div>
+                                                                <div v-else>
+                                                                    <a> Nenhum Cadastrado</a>
+                                                                </div>
                                                             </td>
                                                         </tbody>
 
@@ -199,16 +223,33 @@
         var app = new Vue({
             el: '#app',
             data: {
-                exibir: '',
+                exibir: 'H1K7P',
                 documentos: []
             },
             methods: {
                 docs: function () {
-                    console.log("aaa");
                     getCpfbyCodigo(app.exibir, (teste) => {
 
                         app.documentos = teste;
                     })
+                },
+                selectExame: function (documentoSelecionado) {
+                    let aux = app.documentos;
+                    aux[aux.indexOf(documentoSelecionado)].exameShow = true;
+                    app.documentos = [];
+                    app.documentos = aux;
+                },
+                selectMedicamento: function (documentoSelecionado) {
+                    let aux = app.documentos;
+                    aux[aux.indexOf(documentoSelecionado)].medicamentoShow = true;
+                    app.documentos = [];
+                    app.documentos = aux;
+                },
+                selectReceita: function (documentoSelecionado) {
+                    let aux = app.documentos;
+                    aux[aux.indexOf(documentoSelecionado)].receitaShow = true;
+                    app.documentos = [];
+                    app.documentos = aux;
                 }
             }
 
