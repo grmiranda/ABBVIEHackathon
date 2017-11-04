@@ -1,8 +1,7 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
-      GlobalMed
-    </ion-title>
+  <ion-navbar color="primary" class="center">
+    <img src="./images/logo.png" class="logo">
+    <p>das</p>
   </ion-navbar>
 </ion-header>
 
@@ -37,6 +36,25 @@
           <p class="cardTitle">Gerar</p>
           <p class="cardTitle">Codigo</p>
           <img class="cardImage" src="./images/engrenagem.png">
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <p class="textInfo" >Acesse seu histórico</p>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item class="cardButton yellow" (click)="historicoExame()">
+          <p class="cardTitle">Histórico de</p>
+          <p class="cardTitle">Exames</p>
+          <img class="cardImage" src="./images/hexame.png">
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item class="cardButton gray" (click)="historicoConsulta()">
+          <p class="cardTitle">Histórico de</p>
+          <p class="cardTitle">Consultas</p>
+          <img class="cardImage" src="./images/hconsulta.png">
         </ion-item>
       </ion-col>
     </ion-row>

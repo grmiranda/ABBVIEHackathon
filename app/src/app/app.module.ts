@@ -20,6 +20,7 @@ import { CidadePage } from '../pages/cidade/cidade';
 import { GerarCodigoPage } from '../pages/gerar-codigo/gerar-codigo';
 import { ChatPage } from '../pages/chat/chat';
 import { HistoricoPage } from '../pages/historico/historico';
+import { HistoricoConsultaPage } from '../pages/historico-consulta/historico-consulta';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJpQtdB9cDhufYCwSQXvsGGRs0HKFEdzs",
@@ -42,6 +43,8 @@ const firebaseConfig = {
     GerarCodigoPage,
     ChatPage,
     HistoricoPage,
+    HistoricoConsultaPage,
+
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,8 @@ const firebaseConfig = {
     GerarCodigoPage,
     ChatPage,
     HistoricoPage,
+    HistoricoConsultaPage,
+    
   ],
   providers: [
     StatusBar,
