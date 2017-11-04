@@ -1,0 +1,32 @@
+<!--
+  Generated template for the MedicosEClinicasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Envolvidos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let envolvido of envolvidos" (click)="selectCategoria(envolvido)">
+      <ion-row>
+        <ion-col>
+          <div>{{envolvido.area}}</div>
+        </ion-col>
+        <ion-col col-2>
+          <ion-icon name={{envolvido.icon}}></ion-icon>
+        </ion-col>
+      </ion-row>
+      <div *ngIf="envolvido.icon == 'ios-arrow-down'">
+        <ion-item *ngFor="let medico of envolvido.pessoas">{{medico.nome}}</ion-item>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,5 +1,7 @@
 export class Documento {
     public medico = "";
     public data = "";
-    public img = "";
+    public receita = "";
+    public exame = "";
+    public medicamentos = "";
 }

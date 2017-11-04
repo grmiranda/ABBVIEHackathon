@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { CadastroExamePage } from '../cadastro-exame/cadastro-exame';
+import { CadastroConsultaPage } from '../cadastro-consulta/cadastro-consulta';
+import { MedicosEClinicasPage } from '../medicos-e-clinicas/medicos-e-clinicas';
 
 @Component({
   selector: 'page-home',
@@ -17,5 +19,13 @@ export class HomePage {
 
   cadastrarExame() {
     this.navCtrl.push(CadastroExamePage);
+  }
+
+  cadastroConsulta() {
+    this.navCtrl.push(CadastroConsultaPage);
+  }
+
+  abrirMedicos(){
+    this.navCtrl.push(MedicosEClinicasPage);
   }
 }
