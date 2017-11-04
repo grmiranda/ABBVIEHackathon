@@ -1,3 +1,39 @@
 page-home {
 
 }
+
+.cardButton {
+    position: relative;
+    height: 130px;
+    border-radius: 10px;
+    align-items: flex-start;
+}
+.cardTitle{
+    color: white !important;
+    font-size: 16px !important;
+}
+.cardImage{
+    position: absolute;
+    margin-top: -20px; 
+    margin-left: 50px;
+    height: 120px;
+}
+.blue {
+  background: #0F6F97;
+}
+.green {
+  background: #1F9E6F;
+}
+.orange {
+  background: #FF6501;
+}
+.purple {
+  background: #B581CC;
+
+}
+
+
+
+
+
+

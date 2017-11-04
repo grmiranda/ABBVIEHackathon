@@ -1,14 +1,44 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Global Med
+      GlobalMed
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <h1 (click)="cadastrarExame()">Cadastrar Exame</h1>
-  <h1 (click)="cadastroConsulta()">Cadastrar Consulta</h1>
-  <h1 (click)="abrirMedicos()">Medicos e clinicas Que participam do programa</h1>
-  <h1 (click)="gerarCodigo()">Gerar Codigo</h1>
+<ion-content class="container">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item  class="cardButton blue" (click)="cadastrarExame()">
+            <p class="cardTitle">Cadastrar</p>
+            <p class="cardTitle">Exame</p>
+            <img class="cardImage" src="./images/exame.png">
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item class="cardButton green" (click)="cadastroConsulta()">
+          <p class="cardTitle">Cadastrar</p>
+          <p class="cardTitle">Consulta</p>
+          <img class="cardImage" src="./images/consulta.png">
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item class="cardButton orange" (click)="abrirMedicos()">
+          <p class="cardTitle">Lista de Medicos</p>
+          <p class="cardTitle">Clinicas</p>
+          <img class="cardImage" src="./images/lupa.png">
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item class="cardButton purple" (click)="gerarCodigo()">
+          <p class="cardTitle">Gerar</p>
+          <p class="cardTitle">Codigo</p>
+          <img class="cardImage" src="./images/engrenagem.png">
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
