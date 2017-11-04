@@ -13,6 +13,15 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'historico.html',
 })
 export class HistoricoPage {
+  shownGroup = null;
+  exames = [
+    { titulo: 'Hemograma', data: '13/12/1993' },
+    { titulo: 'HIV', data: '13/12/1993' }
+  ];
+  consultas = [
+    { titulo: 'oioi', data: '13/12/1993' },
+    { titulo: 'oioioi', data: '13/12/1993' }
+  ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -20,5 +29,15 @@ export class HistoricoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoricoPage');
   }
-
+  toggleGroup(group) {
+    if (this.isGroupShown(group)) {
+      this.shownGroup = null;
+    } else {
+      this.shownGroup = group;
+    }
+  };
+  isGroupShown(group) {
+    return this.shownGroup === group;
+  };
+  
 }

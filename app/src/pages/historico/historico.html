@@ -7,12 +7,65 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>historico</ion-title>
+    <ion-title>Histórico</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+
+      <ion-card-header>
+        Exames
+      </ion-card-header>
+
+      <ion-card-content *ngIf="isGroupShown(1)">
+        <ion-list>
+          <ion-grid ion-item *ngFor="let item of exames" (click)="itemSelected(item)">
+            <ion-row>
+              <ion-col>
+                <h3>
+                  {{ item.titulo }}
+                </h3>
+              </ion-col>
+              <ion-col>
+                <h3>
+                  {{ item.data }}
+                </h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+      </ion-card-content>
+
+    </ion-card>
+
+    <ion-card (click)="toggleGroup(0)" [ngClass]="{active: isGroupShown(0)}">
+    
+      <ion-card-header>
+       Consultas
+      </ion-card-header>
+    
+      <ion-card-content *ngIf="isGroupShown(0)">
+        <ion-list>
+          <ion-grid ion-item *ngFor="let item of consultas" (click)="itemSelected(item)">
+            <ion-row>
+              <ion-col>
+                <h3>
+                  {{ item.titulo }}
+                </h3>
+              </ion-col>
+              <ion-col>
+                <h3>
+                  {{ item.data }}
+                </h3>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-list>
+      </ion-card-content>
+    
+    </ion-card>
 
 </ion-content>
