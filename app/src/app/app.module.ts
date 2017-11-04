@@ -17,6 +17,7 @@ import { CameraProvider } from '../providers/camera/camera';
 import { CadastroConsultaPage } from '../pages/cadastro-consulta/cadastro-consulta';
 import { MedicosEClinicasPage } from '../pages/medicos-e-clinicas/medicos-e-clinicas';
 import { CidadePage } from '../pages/cidade/cidade';
+import { GerarCodigoPage } from '../pages/gerar-codigo/gerar-codigo';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJpQtdB9cDhufYCwSQXvsGGRs0HKFEdzs",
@@ -35,7 +36,8 @@ const firebaseConfig = {
     MsgInformativaPage,
     CadastroConsultaPage,
     MedicosEClinicasPage,
-    CidadePage
+    CidadePage,
+    GerarCodigoPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ const firebaseConfig = {
     MsgInformativaPage,
     CadastroConsultaPage,
     MedicosEClinicasPage,
-    CidadePage
+    CidadePage,
+    GerarCodigoPage
   ],
   providers: [
     StatusBar,

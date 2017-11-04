@@ -1,0 +1,36 @@
+<!--
+  Generated template for the GerarCodigoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Gerar Codigo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Tempo Disponivel</ion-label>
+    <ion-select [(ngModel)]="tempo">
+      <ion-option value="30">30 min</ion-option>
+      <ion-option value="1">1 hr</ion-option>
+      <ion-option value="2">2 hrs</ion-option>
+      <ion-option value="4">4 hrs</ion-option>
+      <ion-option value="8">8 hrs</ion-option>
+      <ion-option value="12">12 hrs</ion-option>
+      <ion-option value="24">24 hrs</ion-option>
+      <ion-option value="48">48 hrs</ion-option>
+      <ion-option value="Ilimitado"> Ilimitado</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <button ion-button full style="margin-top: 10px; margin-bottom: 20px" (click)="gerarHash()">Gerar Código</button>
+
+  <b>Seu Código é:</b>
+  <h1 style="text-align: center; background-color: yellow">{{codigo}}</h1>
+</ion-content>
