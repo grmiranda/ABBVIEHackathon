@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="shortcut icon" href="../images/favicon.png" />
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
 </head>
 
 <body>
@@ -82,12 +85,12 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="../pages/formExame.html">
+                                        <a class="nav-link" href="../pages/formReceita.html">
                                             Receita
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="../pages/formReceita.html">
+                                        <a class="nav-link" href="../pages/formExame.html">
                                             Exame
                                         </a>
                                     </li>
@@ -104,54 +107,80 @@
                     </ul>
                 </nav>
                 <!-- SIDEBAR ENDS -->
-
-
                 <div class="content-wrapper">
-                    <h3 class="text-primary mb-4">Consulta</h3>
+                    <h3 class="text-primary mb-4">Histórico</h3>
                     <div class="row mb-2">
                         <div class="col-lg-12">
                             <div class="card">
-                                <div class="card-block">
-                                    <form class="forms-sample">
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Código do Paciente</label>
-                                            <input type="email" class="form-control p-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Insira o código do paciente">
+                                <div class="card-block">                                    
+
+                                    
+                                    <div class="row mt" id="app">
+                                            <div class="form-group">
+                                                    <label for="exampleInputEmail1">Código do Paciente</label>
+                                                    <input class="form-control p-input" id="exampleInputEmail1" v-model="exibir" aria-describedby="emailHelp" placeholder="Insira o código">
+                                                </div>
+                                                <div class="col-12">
+                                                    <button  class="btn btn-primary" v-on:click="docs()" >buscar</button>
+                                                </div>
+                                        <div class="col-md-12">
+                                            <div>
+                                                <div class="content-panel table-responsive">
+                                                    <table class="table table-advance">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <i class="fa fa-user-o"></i> Data </th>
+                                                                <th>
+                                                                    <i class="fa fa-user-o"></i> Medico</th>
+                                                                <th>
+                                                                    <i></i> Exame </th>
+                                                                <th>
+                                                                    <i></i> Medicamentos</th>
+
+                                                                <th>
+                                                                    <i></i> Receita</th>
+                                                                <th></th>
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody v-for="documentoAtual of documentos">
+                                                            <!--<h5 class="centered">contanome</h5>-->
+
+                                                            <td>
+                                                                {{new Date(documentoAtual.data).toLocaleDateString()}}
+                                                            </td>
+                                                            <td>
+                                                                {{documentoAtual.medico}}
+                                                            </td>
+                                                            <td>
+                                                                <img :src="documentoAtual.exame" height="150" />
+                                                            </td>
+                                                            <td>
+                                                                <img :src="documentoAtual.medicamentos" height="150" />
+                                                            </td>
+
+                                                            <td>
+                                                                <img :src="documentoAtual.receita" height="150" />
+                                                            </td>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                                <!-- /content-panel -->
+                                            </div>
+                                            <!-- /col-md-12 -->
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputEmail1">Código CID 10</label>
-                                            <input type="email" class="form-control p-input" id="cid" aria-describedby="emailHelp" placeholder="Insira o código da doença ex: K29 (gastrite)">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Atestado médico</label>
-                                            <input type="file" class="form-control-file" id="atestado" aria-describedby="fileHelp">
-                                            <small id="fileHelp" class="form-text text-muted">Insira aqui o atestádo médico da consulta.</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Receita médica</label>
-                                            <input type="file" class="form-control-file" id="atestado" aria-describedby="fileHelp">
-                                            <small id="fileHelp" class="form-text text-muted">Insira aqui a receita médica da consulta.</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputFile">Medicamentos</label>
-                                            <input type="file" class="form-control-file" id="atestado" aria-describedby="fileHelp">
-                                            <small id="fileHelp" class="form-text text-muted">Insira aqui os medicamentos, e medicamentos.</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleTextarea">Descrição</label>
-                                            <textarea class="form-control p-input" id="descricao" rows="3"></textarea>
-                                        </div>
-                                        <div class="col-12">
-                                            <button type="submit" class="btn btn-primary">Enviar</button>
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
-
     </div>
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
@@ -161,6 +190,26 @@
     <script src="../js/bootstrap-select.js"></script>
     <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
     <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                exibir: '',
+                documentos: []
+            },
+            methods: {                
+                docs: function () {
+                    console.log("aaa");
+                    getCpfbyCodigo(app.exibir, (teste) => {
+                        
+                        app.documentos = teste;
+                    })
+                }
+            }
+
+
+        })
+    </script>
     <script src="../js/off-canvas.js"></script>
     <script src="../js/hoverable-collapse.js"></script>
     <script src="../js/misc.js"></script>
