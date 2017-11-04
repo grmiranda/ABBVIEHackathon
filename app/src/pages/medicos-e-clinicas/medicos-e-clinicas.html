@@ -14,9 +14,10 @@
 
 
 <ion-content padding>
+  <ion-searchbar></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let envolvido of envolvidos" (click)="selectCategoria(envolvido)">
-      <ion-row>
+    <ion-item *ngFor="let envolvido of envolvidos">
+      <ion-row  (click)="selectCategoria(envolvido)">
         <ion-col>
           <div>{{envolvido.area}}</div>
         </ion-col>
@@ -25,7 +26,7 @@
         </ion-col>
       </ion-row>
       <div *ngIf="envolvido.icon == 'ios-arrow-down'">
-        <ion-item *ngFor="let medico of envolvido.pessoas">{{medico.nome}}</ion-item>
+        <ion-item *ngFor="let medico of envolvido.pessoas">{{medico.nome}} <p *ngIf="medico.tel">{{medico.tel}}</p> </ion-item>
       </div>
     </ion-item>
   </ion-list>

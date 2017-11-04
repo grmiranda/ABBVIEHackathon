@@ -16,6 +16,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CameraProvider } from '../providers/camera/camera';
 import { CadastroConsultaPage } from '../pages/cadastro-consulta/cadastro-consulta';
 import { MedicosEClinicasPage } from '../pages/medicos-e-clinicas/medicos-e-clinicas';
+import { CidadePage } from '../pages/cidade/cidade';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJpQtdB9cDhufYCwSQXvsGGRs0HKFEdzs",
@@ -34,6 +35,7 @@ const firebaseConfig = {
     MsgInformativaPage,
     CadastroConsultaPage,
     MedicosEClinicasPage,
+    CidadePage
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ const firebaseConfig = {
     MsgInformativaPage,
     CadastroConsultaPage,
     MedicosEClinicasPage,
+    CidadePage
   ],
   providers: [
     StatusBar,

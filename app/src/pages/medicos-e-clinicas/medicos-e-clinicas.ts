@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { CidadePage } from '../cidade/cidade';
 /**
  * Generated class for the MedicosEClinicasPage page.
  *
@@ -19,24 +19,24 @@ export class MedicosEClinicasPage {
       area: 'Cardiologia',
       icon: 'ios-arrow-forward',
       pessoas: [
-        { nome: 'Dr. joão Silva' },
-        { nome: 'Clinica seu coração' }
+        { nome: 'Dr. joão Silva', tel: '759999999' },
+        { nome: 'Clinica seu coração', tel: '75888888' }
       ]
     },
     {
       area: 'Dermatologia',
       icon: 'ios-arrow-forward',
       pessoas: [
-        { nome: 'Dr. Marcos' },
-        { nome: 'Dr. Luciana' }
+        { nome: 'Dr. Marcos', tel: '7599956656' },
+        { nome: 'Dr. Luciana', tel: '' }
       ]
     },
     {
       area: 'Angeologia',
       icon: 'ios-arrow-forward',
       pessoas: [
-        { nome: 'Dr. Marcos' },
-        { nome: 'Dr. Luciana' }
+        { nome: 'Dr. Marcos', tel: '7594944545' },
+        { nome: 'Dr. Luciana', tel: '7595656565' }
       ]
     }
   ]
@@ -45,9 +45,8 @@ export class MedicosEClinicasPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MedicosEClinicasPage');
+    this.navCtrl.push(CidadePage);
   }
-
 
   selectCategoria(envolvido) {
     envolvido.icon = envolvido.icon == 'ios-arrow-forward' ? "ios-arrow-down" : 'ios-arrow-forward';
