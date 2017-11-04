@@ -112,17 +112,17 @@
                     <div class="row mb-2">
                         <div class="col-lg-12">
                             <div class="card">
-                                <div class="card-block">                                    
+                                <div class="card-block">
 
-                                    
+
                                     <div class="row mt" id="app">
-                                            <div class="form-group">
-                                                    <label for="exampleInputEmail1">Código do Paciente</label>
-                                                    <input class="form-control p-input" id="exampleInputEmail1" v-model="exibir" aria-describedby="emailHelp" placeholder="Insira o código">
-                                                </div>
-                                                <div class="col-12">
-                                                    <button  class="btn btn-primary" v-on:click="docs()" >buscar</button>
-                                                </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Código do Paciente</label>
+                                            <input class="form-control p-input" id="exampleInputEmail1" v-model="exibir" aria-describedby="emailHelp" placeholder="Insira o código">
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary" v-on:click="docs()">buscar</button>
+                                        </div>
                                         <div class="col-md-12">
                                             <div>
                                                 <div class="content-panel table-responsive">
@@ -130,23 +130,28 @@
                                                         <thead>
                                                             <tr>
                                                                 <th>
-                                                                    <i class="fa fa-user-o"></i> Data </th>
+                                                                    <i></i> Especialista </th>
                                                                 <th>
-                                                                    <i class="fa fa-user-o"></i> Medico</th>
-                                                                <th>
-                                                                    <i></i> Exame </th>
-                                                                <th>
-                                                                    <i></i> Medicamentos</th>
+                                                                    <th>
+                                                                        <i></i> Data </th>
+                                                                    <th>
+                                                                        <i class="fa fa-user-o"></i> Medico</th>
+                                                                    <th>
+                                                                        <i></i> Exame </th>
+                                                                    <th>
+                                                                        <i></i> Medicamentos</th>
 
-                                                                <th>
-                                                                    <i></i> Receita</th>
-                                                                <th></th>
+                                                                    <th>
+                                                                        <i></i> Receita</th>
+                                                                    <th></th>
                                                             </tr>
                                                         </thead>
 
                                                         <tbody v-for="documentoAtual of documentos">
                                                             <!--<h5 class="centered">contanome</h5>-->
-
+                                                            <td>
+                                                                    {{documentoAtual.especialista}}
+                                                                </td>
                                                             <td>
                                                                 {{new Date(documentoAtual.data).toLocaleDateString()}}
                                                             </td>
@@ -197,11 +202,11 @@
                 exibir: '',
                 documentos: []
             },
-            methods: {                
+            methods: {
                 docs: function () {
                     console.log("aaa");
                     getCpfbyCodigo(app.exibir, (teste) => {
-                        
+
                         app.documentos = teste;
                     })
                 }
