@@ -21,6 +21,7 @@ import { GerarCodigoPage } from '../pages/gerar-codigo/gerar-codigo';
 import { ChatPage } from '../pages/chat/chat';
 import { HistoricoPage } from '../pages/historico/historico';
 import { HistoricoConsultaPage } from '../pages/historico-consulta/historico-consulta';
+import { VisualizarConsultaPage } from '../pages/visualizar-consulta/visualizar-consulta';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJpQtdB9cDhufYCwSQXvsGGRs0HKFEdzs",
@@ -44,7 +45,7 @@ const firebaseConfig = {
     ChatPage,
     HistoricoPage,
     HistoricoConsultaPage,
-
+    VisualizarConsultaPage,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +67,7 @@ const firebaseConfig = {
     ChatPage,
     HistoricoPage,
     HistoricoConsultaPage,
-    
+    VisualizarConsultaPage,
   ],
   providers: [
     StatusBar,

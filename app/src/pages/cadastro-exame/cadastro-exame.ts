@@ -44,6 +44,13 @@ export class CadastroExamePage {
     });
   }
 
+  presentPopoverEspe(myEvent) {
+    let popover = this.popoverCtrl.create(MsgInformativaPage, { msg: 'Ex.: cardiologista', titulo: 'o que é Especialidade?' });
+    popover.present({
+      ev: myEvent
+    });
+  }
+
   presentToast(msg) {
     let toast = this.toastCtrl.create({
       message: msg,

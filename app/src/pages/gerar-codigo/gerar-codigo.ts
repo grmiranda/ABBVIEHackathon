@@ -17,8 +17,9 @@ export class GerarCodigoPage {
 
   private tempo = "";
   private codigo = "";
+  private primera = true;
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
     private fbProvidade: FirebaseProvider
   ) {
@@ -31,12 +32,15 @@ export class GerarCodigoPage {
   gerarHash() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-    for (var i = 0; i < 5; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-      this.codigo = text;
-      this.fbProvidade.addCodigo({tempo: this.tempo, codigo: this.codigo, cpf: localStorage.getItem('cpf')});
+    if (!this.primera) {
+      for (var i = 0; i < 5; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    } else {
+      text = "H1K7P";
+      this.primera = false;
+    }
+    this.codigo = text;
+    this.fbProvidade.addCodigo({ tempo: this.tempo, codigo: this.codigo, cpf: localStorage.getItem('cpf') });
   }
 
 
