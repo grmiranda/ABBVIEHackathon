@@ -7,7 +7,7 @@ var config = {
     projectId: "hackathonabbvie",
     storageBucket: "hackathonabbvie.appspot.com",
     messagingSenderId: "808637613511"
-  };
+};
 
 firebase.initializeApp(config);
 var db = firebase.database();
@@ -35,15 +35,6 @@ function addcliente(cliente) {
     db.ref().update(updates);
 
     return newPostKey;
-}
-
-function updateCliente(key, cliente) {
-
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        var updates = {};
-        updates['/cliente/' + key] = cliente;
-        db.ref().update(updates);
-    
 }
 
 function addRelacionamento(relacionamento) {
@@ -98,11 +89,38 @@ function getIntegradorKey(key, callback) {
         callback(aux2);
     });
 }
+function addDocumento(documento) {
+    
+    var newPostKey = db.ref().child('documentos').push().key;
+    console.log(newPostKey);
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/documentos/' + newPostKey] = documento;
+    console.log(updates);
+    db.ref().update(updates);
+    return newPostKey;
+}
 
-function getCpfbyCodigo( codigo, callback){
-    db.ref('codigo').orderByChild('codigo').equalTo(codigo).once('value').then(function(snapshot){
-        let aux = []; 
-        let aux3 = [];        
+function getCpf(codigo, callback) {
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    db.ref('codigo').orderByChild('codigo').equalTo(codigo).once('value').then(function (snapshot) {
+        let aux = [];
+        let aux3 = [];
+        for (atual in snapshot.val()) {
+            aux2 = snapshot.val()[atual];
+            aux2.key = atual;
+            //console.log(aux2);
+            aux.push(aux2);
+        }
+        callback(aux[0].cpf);
+    });
+
+}
+
+function getCpfbyCodigo(codigo, callback) {
+    db.ref('codigo').orderByChild('codigo').equalTo(codigo).once('value').then(function (snapshot) {
+        let aux = [];
+        let aux3 = [];
         for (atual in snapshot.val()) {
             aux2 = snapshot.val()[atual];
             aux2.key = atual;
@@ -110,15 +128,15 @@ function getCpfbyCodigo( codigo, callback){
             aux.push(aux2);
         }
         cpf = aux[0].cpf;
-        
-        db.ref('documentos').orderByChild('paciente').equalTo(cpf).once('value').then(function(snapshot2){            
+
+        db.ref('documentos').orderByChild('paciente').equalTo(cpf).once('value').then(function (snapshot2) {
             for (atual in snapshot2.val()) {
                 aux2 = snapshot2.val()[atual];
-                aux2.key = atual;                
+                aux2.key = atual;
                 aux3.push(aux2);
             }
             callback(aux3);
         });
     });
-    
+
 }
