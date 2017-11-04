@@ -19,6 +19,7 @@ import { MedicosEClinicasPage } from '../pages/medicos-e-clinicas/medicos-e-clin
 import { CidadePage } from '../pages/cidade/cidade';
 import { GerarCodigoPage } from '../pages/gerar-codigo/gerar-codigo';
 import { ChatPage } from '../pages/chat/chat';
+import { HistoricoPage } from '../pages/historico/historico';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJpQtdB9cDhufYCwSQXvsGGRs0HKFEdzs",
@@ -39,7 +40,8 @@ const firebaseConfig = {
     MedicosEClinicasPage,
     CidadePage,
     GerarCodigoPage,
-    ChatPage
+    ChatPage,
+    HistoricoPage,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ const firebaseConfig = {
     MedicosEClinicasPage,
     CidadePage,
     GerarCodigoPage,
-    ChatPage
+    ChatPage,
+    HistoricoPage,
   ],
   providers: [
     StatusBar,
