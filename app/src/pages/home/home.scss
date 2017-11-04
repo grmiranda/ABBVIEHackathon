@@ -1,7 +1,14 @@
 page-home {
-
+ 
 }
-
+.center{
+  align-items: center;
+}
+.logo{
+  padding-left: 20px;
+  align-self: center;
+  width: 150px;
+}
 .cardButton {
     position: relative;
     height: 130px;
@@ -29,8 +36,22 @@ page-home {
 }
 .purple {
   background: #B581CC;
-
 }
+.gray{
+   background: gray;
+}
+.yellow{
+  background: rgb(105, 201, 203);
+}
+.lightgray{
+ background: lightgray;
+}
+
+.textInfo{
+  text-align: center;
+  color: gray !important;
+}
+
 
 
 

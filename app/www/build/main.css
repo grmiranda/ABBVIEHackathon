@@ -28121,19 +28121,32 @@ page-chat .message-wrap .message.right .msg-content span.triangle {
   right: -5px;
 }
 
-.listItem1 {
-  background: #0F6F97;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding-top: 10px;
+.data {
+  text-align: center !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  background: lightgray !important;
 }
 
-.listItem2 {
-  margin-top: -7px;
-  background: #1F9E6F;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  padding-top: 10px;
+.center {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.logo {
+  padding-left: 20px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  width: 150px;
 }
 
 .cardButton {
@@ -28172,4 +28185,21 @@ page-chat .message-wrap .message.right .msg-content span.triangle {
 
 .purple {
   background: #B581CC;
+}
+
+.gray {
+  background: gray;
+}
+
+.yellow {
+  background: #69c9cb;
+}
+
+.lightgray {
+  background: lightgray;
+}
+
+.textInfo {
+  text-align: center;
+  color: gray !important;
 }

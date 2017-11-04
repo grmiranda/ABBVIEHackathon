@@ -148,9 +148,16 @@ webpackEmptyAsyncContext.id = 189;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricoPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__historico_historico__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_exame_cadastro_exame__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__cadastro_consulta_cadastro_consulta__ = __webpack_require__(275);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__medicos_e_clinicas_medicos_e_clinicas__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__gerar_codigo_gerar_codigo__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__historico_consulta_historico_consulta__ = __webpack_require__(411);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -162,53 +169,48 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the HistoricoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var HistoricoPage = (function () {
-    function HistoricoPage(navCtrl, navParams) {
+
+
+
+
+
+
+
+var HomePage = (function () {
+    function HomePage(navCtrl, fbProvider) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.shownGroup = null;
-        this.exames = [
-            { titulo: 'Hemograma', data: '13/12/1993' },
-            { titulo: 'HIV', data: '13/12/1993' }
-        ];
-        this.consultas = [
-            { titulo: 'oioi', data: '13/12/1993' },
-            { titulo: 'oioioi', data: '13/12/1993' }
-        ];
+        localStorage.setItem('cpf', '000.000.000-00');
+        // fbProvider.addDocumento({ cliente: 'teste' }).then(value => console.log(value.key));
     }
-    HistoricoPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad HistoricoPage');
+    HomePage.prototype.cadastrarExame = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__cadastro_exame_cadastro_exame__["a" /* CadastroExamePage */]);
     };
-    HistoricoPage.prototype.toggleGroup = function (group) {
-        if (this.isGroupShown(group)) {
-            this.shownGroup = null;
-        }
-        else {
-            this.shownGroup = group;
-        }
+    HomePage.prototype.cadastroConsulta = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__cadastro_consulta_cadastro_consulta__["a" /* CadastroConsultaPage */]);
     };
-    ;
-    HistoricoPage.prototype.isGroupShown = function (group) {
-        return this.shownGroup === group;
+    HomePage.prototype.abrirMedicos = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__medicos_e_clinicas_medicos_e_clinicas__["a" /* MedicosEClinicasPage */]);
     };
-    ;
-    return HistoricoPage;
+    HomePage.prototype.gerarCodigo = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__gerar_codigo_gerar_codigo__["a" /* GerarCodigoPage */]);
+    };
+    HomePage.prototype.historicoExame = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_0__historico_historico__["a" /* HistoricoPage */]);
+    };
+    HomePage.prototype.historicoConsulta = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_8__historico_consulta_historico_consulta__["a" /* HistoricoConsultaPage */]);
+    };
+    return HomePage;
 }());
-HistoricoPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-historico',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\historico\historico.html"*/'<!--\n\n  Generated template for the HistoricoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Histórico</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-card (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">\n\n\n\n      <ion-card-header>\n\n        Exames\n\n      </ion-card-header>\n\n\n\n      <ion-card-content *ngIf="isGroupShown(1)">\n\n        <ion-list>\n\n          <ion-grid ion-item *ngFor="let item of exames" (click)="itemSelected(item)">\n\n            <ion-row>\n\n              <ion-col>\n\n                <h3>\n\n                  {{ item.titulo }}\n\n                </h3>\n\n              </ion-col>\n\n              <ion-col>\n\n                <h3>\n\n                  {{ item.data }}\n\n                </h3>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-grid>\n\n        </ion-list>\n\n      </ion-card-content>\n\n\n\n    </ion-card>\n\n\n\n    <ion-card (click)="toggleGroup(0)" [ngClass]="{active: isGroupShown(0)}">\n\n    \n\n      <ion-card-header>\n\n       Consultas\n\n      </ion-card-header>\n\n    \n\n      <ion-card-content *ngIf="isGroupShown(0)">\n\n        <ion-list>\n\n          <ion-grid ion-item *ngFor="let item of consultas" (click)="itemSelected(item)">\n\n            <ion-row>\n\n              <ion-col>\n\n                <h3>\n\n                  {{ item.titulo }}\n\n                </h3>\n\n              </ion-col>\n\n              <ion-col>\n\n                <h3>\n\n                  {{ item.data }}\n\n                </h3>\n\n              </ion-col>\n\n            </ion-row>\n\n          </ion-grid>\n\n        </ion-list>\n\n      </ion-card-content>\n\n    \n\n    </ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\historico\historico.html"*/,
+HomePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
+        selector: 'page-home',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary" class="center">\n\n    <img src="./images/logo.png" class="logo">\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item  class="cardButton blue" (click)="cadastrarExame()">\n\n            <p class="cardTitle">Cadastrar</p>\n\n            <p class="cardTitle">Exame</p>\n\n            <img class="cardImage" src="./images/exame.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton green" (click)="cadastroConsulta()">\n\n          <p class="cardTitle">Cadastrar</p>\n\n          <p class="cardTitle">Consulta</p>\n\n          <img class="cardImage" src="./images/consulta.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton orange" (click)="abrirMedicos()">\n\n          <p class="cardTitle">Lista de Medicos</p>\n\n          <p class="cardTitle">Clinicas</p>\n\n          <img class="cardImage" src="./images/lupa.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton purple" (click)="gerarCodigo()">\n\n          <p class="cardTitle">Gerar</p>\n\n          <p class="cardTitle">Codigo</p>\n\n          <img class="cardImage" src="./images/engrenagem.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <p class="textInfo" >Acesse seu histórico</p>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton yellow" (click)="historicoExame()">\n\n          <p class="cardTitle">Histórico de</p>\n\n          <p class="cardTitle">Exames</p>\n\n          <img class="cardImage" src="./images/hexame.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton gray" (click)="historicoConsulta()">\n\n          <p class="cardTitle">Histórico de</p>\n\n          <p class="cardTitle">Consultas</p>\n\n          <img class="cardImage" src="./images/hconsulta.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\home\home.html"*/
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
-], HistoricoPage);
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__["a" /* FirebaseProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__["a" /* FirebaseProvider */]) === "function" && _b || Object])
+], HomePage);
 
 var _a, _b;
-//# sourceMappingURL=historico.js.map
+//# sourceMappingURL=home.js.map
 
 /***/ }),
 
@@ -418,7 +420,7 @@ var CadastroConsultaPage = (function () {
 }());
 CadastroConsultaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-cadastro-consulta',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\cadastro-consulta\cadastro-consulta.html"*/'<!--\n\n  Generated template for the CadastroConsultaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Cadastro Consulta</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col>\n\n      <ion-item>\n\n        <ion-label color="primary" floating>CRM médico</ion-label>\n\n        <ion-input [(ngModel)]="documento.medico"></ion-input>\n\n      </ion-item>\n\n    </ion-col>\n\n    <ion-col col-1>\n\n      <ion-icon style="margin-top: 40px" ios="ios-help" md="md-help" (click)="presentPopover($event)"></ion-icon>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-item>\n\n    <ion-label>Data de consulta\n\n    </ion-label>\n\n    <ion-datetime displayFormat="DD/MM/YYYY  HH:mm" [(ngModel)]="documento.data"></ion-datetime>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-row>\n\n      <ion-col col-9>\n\n        <h2>Receita</h2>\n\n      </ion-col>\n\n      <ion-col>\n\n        <a (click)="capturarReceita()">Capturar</a>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-img width="500" height="300" src={{documento.receita}}></ion-img>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-row>\n\n      <ion-col col-9>\n\n        <h2>Medicamentos utilizados</h2>\n\n      </ion-col>\n\n      <ion-col>\n\n        <a (click)="capturarMedicamento()">Capturar</a>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-img width="500" height="300" src={{documento.medicamentos}}></ion-img>\n\n  </ion-item>\n\n  <button ion-button full style="margin-top: 50px" (click)="enviar()">Enviar</button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\cadastro-consulta\cadastro-consulta.html"*/,
+        selector: 'page-cadastro-consulta',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\cadastro-consulta\cadastro-consulta.html"*/'<!--\n\n  Generated template for the CadastroConsultaPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Cadastrar Consulta</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-row>\n\n    <ion-col>\n\n      <ion-item>\n\n        <ion-label color="primary" floating>CRM médico</ion-label>\n\n        <ion-input [(ngModel)]="documento.medico"></ion-input>\n\n      </ion-item>\n\n    </ion-col>\n\n    <ion-col col-1>\n\n      <ion-icon style="margin-top: 40px" ios="ios-help" md="md-help" (click)="presentPopover($event)"></ion-icon>\n\n    </ion-col>\n\n  </ion-row>\n\n  <ion-item>\n\n    <ion-label>Data de consulta\n\n    </ion-label>\n\n    <ion-datetime displayFormat="DD/MM/YYYY  HH:mm" [(ngModel)]="documento.data"></ion-datetime>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-row>\n\n      <ion-col col-9>\n\n        <h2>Receita</h2>\n\n      </ion-col>\n\n      <ion-col>\n\n        <a (click)="capturarReceita()">Capturar</a>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-img width="500" height="300" src={{documento.receita}}></ion-img>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-row>\n\n      <ion-col col-9>\n\n        <h2>Medicamentos utilizados</h2>\n\n      </ion-col>\n\n      <ion-col>\n\n        <a (click)="capturarMedicamento()">Capturar</a>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-item>\n\n  <ion-item>\n\n    <ion-img width="500" height="300" src={{documento.medicamentos}}></ion-img>\n\n  </ion-item>\n\n  <button ion-button full style="margin-top: 50px" (click)="enviar()">Enviar</button>\n\n</ion-content>'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\cadastro-consulta\cadastro-consulta.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
@@ -500,7 +502,7 @@ var MedicosEClinicasPage = (function () {
 }());
 MedicosEClinicasPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-medicos-e-clinicas',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\medicos-e-clinicas\medicos-e-clinicas.html"*/'<!--\n\n  Generated template for the MedicosEClinicasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Envolvidos</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-searchbar></ion-searchbar>\n\n  <ion-list>\n\n    <ion-item *ngFor="let envolvido of envolvidos">\n\n      <ion-row  (click)="selectCategoria(envolvido)">\n\n        <ion-col>\n\n          <div>{{envolvido.area}}</div>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <ion-icon name={{envolvido.icon}}></ion-icon>\n\n        </ion-col>\n\n      </ion-row>\n\n      <div *ngIf="envolvido.icon == \'ios-arrow-down\'">\n\n        <ion-item *ngFor="let medico of envolvido.pessoas">{{medico.nome}} <p *ngIf="medico.tel">{{medico.tel}}</p> </ion-item>\n\n      </div>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\medicos-e-clinicas\medicos-e-clinicas.html"*/,
+        selector: 'page-medicos-e-clinicas',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\medicos-e-clinicas\medicos-e-clinicas.html"*/'<!--\n\n  Generated template for the MedicosEClinicasPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Lista de Médicos/Clinicas</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <ion-searchbar></ion-searchbar>\n\n  <ion-list>\n\n    <ion-item *ngFor="let envolvido of envolvidos">\n\n      <ion-row  (click)="selectCategoria(envolvido)">\n\n        <ion-col>\n\n          <div>{{envolvido.area}}</div>\n\n        </ion-col>\n\n        <ion-col col-2>\n\n          <ion-icon name={{envolvido.icon}}></ion-icon>\n\n        </ion-col>\n\n      </ion-row>\n\n      <div *ngIf="envolvido.icon == \'ios-arrow-down\'">\n\n        <ion-item *ngFor="let medico of envolvido.pessoas">{{medico.nome}} <p *ngIf="medico.tel">{{medico.tel}}</p> </ion-item>\n\n      </div>\n\n    </ion-item>\n\n  </ion-list>\n\n</ion-content>'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\medicos-e-clinicas\medicos-e-clinicas.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
 ], MedicosEClinicasPage);
@@ -668,10 +670,10 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(229);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_http__ = __webpack_require__(406);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(234);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2__ = __webpack_require__(407);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_firebase_firebase__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_cadastro_exame_cadastro_exame__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_msg_informativa_msg_informativa__ = __webpack_require__(139);
@@ -681,14 +683,16 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_medicos_e_clinicas_medicos_e_clinicas__ = __webpack_require__(276);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_cidade_cidade__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_gerar_codigo_gerar_codigo__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_chat_chat__ = __webpack_require__(409);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_historico_historico__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_chat_chat__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_historico_historico__ = __webpack_require__(409);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_historico_consulta_historico_consulta__ = __webpack_require__(411);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -736,6 +740,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__pages_gerar_codigo_gerar_codigo__["a" /* GerarCodigoPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_chat_chat__["a" /* ChatPage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_historico_historico__["a" /* HistoricoPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_historico_consulta_historico_consulta__["a" /* HistoricoConsultaPage */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -758,6 +763,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__pages_gerar_codigo_gerar_codigo__["a" /* GerarCodigoPage */],
             __WEBPACK_IMPORTED_MODULE_19__pages_chat_chat__["a" /* ChatPage */],
             __WEBPACK_IMPORTED_MODULE_20__pages_historico_historico__["a" /* HistoricoPage */],
+            __WEBPACK_IMPORTED_MODULE_21__pages_historico_consulta_historico_consulta__["a" /* HistoricoConsultaPage */],
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -783,7 +789,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_historico_historico__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(232);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -800,7 +806,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_historico_historico__["a" /* HistoricoPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -813,74 +819,15 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
 ], MyApp);
 
+var _a, _b, _c;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 345:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_firebase_firebase__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cadastro_exame_cadastro_exame__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__cadastro_consulta_cadastro_consulta__ = __webpack_require__(275);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__medicos_e_clinicas_medicos_e_clinicas__ = __webpack_require__(276);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__gerar_codigo_gerar_codigo__ = __webpack_require__(278);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-var HomePage = (function () {
-    function HomePage(navCtrl, fbProvider) {
-        this.navCtrl = navCtrl;
-        localStorage.setItem('cpf', '000.000.000-00');
-        // fbProvider.addDocumento({ cliente: 'teste' }).then(value => console.log(value.key));
-    }
-    HomePage.prototype.cadastrarExame = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__cadastro_exame_cadastro_exame__["a" /* CadastroExamePage */]);
-    };
-    HomePage.prototype.cadastroConsulta = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__cadastro_consulta_cadastro_consulta__["a" /* CadastroConsultaPage */]);
-    };
-    HomePage.prototype.abrirMedicos = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__medicos_e_clinicas_medicos_e_clinicas__["a" /* MedicosEClinicasPage */]);
-    };
-    HomePage.prototype.gerarCodigo = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__gerar_codigo_gerar_codigo__["a" /* GerarCodigoPage */]);
-    };
-    return HomePage;
-}());
-HomePage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>\n\n      GlobalMed\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item  class="cardButton blue" (click)="cadastrarExame()">\n\n            <p class="cardTitle">Cadastrar</p>\n\n            <p class="cardTitle">Exame</p>\n\n            <img class="cardImage" src="./images/exame.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton green" (click)="cadastroConsulta()">\n\n          <p class="cardTitle">Cadastrar</p>\n\n          <p class="cardTitle">Consulta</p>\n\n          <img class="cardImage" src="./images/consulta.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton orange" (click)="abrirMedicos()">\n\n          <p class="cardTitle">Lista de Medicos</p>\n\n          <p class="cardTitle">Clinicas</p>\n\n          <img class="cardImage" src="./images/lupa.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton purple" (click)="gerarCodigo()">\n\n          <p class="cardTitle">Gerar</p>\n\n          <p class="cardTitle">Codigo</p>\n\n          <img class="cardImage" src="./images/engrenagem.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\home\home.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_firebase_firebase__["a" /* FirebaseProvider */]])
-], HomePage);
-
-//# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 409:
+/***/ 408:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -938,6 +885,119 @@ ChatPage = __decorate([
 ], ChatPage);
 
 //# sourceMappingURL=chat.js.map
+
+/***/ }),
+
+/***/ 409:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricoPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the HistoricoPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoricoPage = (function () {
+    function HistoricoPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.shownGroup = null;
+        this.exames = [
+            { titulo: 'Hemograma', data: '13/12/1993' },
+            { titulo: 'HIV', data: '13/12/1993' }
+        ];
+        this.consultas = [
+            { titulo: 'oioi', data: '13/12/1993' },
+            { titulo: 'oioioi', data: '13/12/1993' }
+        ];
+    }
+    HistoricoPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad HistoricoPage');
+    };
+    HistoricoPage.prototype.toggleGroup = function (group) {
+        if (this.isGroupShown(group)) {
+            this.shownGroup = null;
+        }
+        else {
+            this.shownGroup = group;
+        }
+    };
+    ;
+    HistoricoPage.prototype.isGroupShown = function (group) {
+        return this.shownGroup === group;
+    };
+    ;
+    return HistoricoPage;
+}());
+HistoricoPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-historico',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\historico\historico.html"*/'<!--\n\n  Generated template for the HistoricoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar color="primary">\n\n    <ion-title>Histórico de Exames</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <ion-item-group>\n\n    <ion-item-divider color="light" class="data">12/08/2017</ion-item-divider>\n\n    <ion-item>Hemograma</ion-item>\n\n    <ion-item-divider color="light" class="data">25/08/2017</ion-item-divider>\n\n    <ion-item>Virologia</ion-item>\n\n  </ion-item-group>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\historico\historico.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+], HistoricoPage);
+
+//# sourceMappingURL=historico.js.map
+
+/***/ }),
+
+/***/ 411:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoricoConsultaPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the HistoricoConsultaPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var HistoricoConsultaPage = (function () {
+    function HistoricoConsultaPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    HistoricoConsultaPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad HistoricoConsultaPage');
+    };
+    return HistoricoConsultaPage;
+}());
+HistoricoConsultaPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-historico-consulta',template:/*ion-inline-start:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\historico-consulta\historico-consulta.html"*/'<!--\n  Generated template for the HistoricoConsultaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="primary">\n    <ion-title>Historico de Consultas</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n  <ion-item-group>\n    <ion-item-divider color="light" class="data">12/08/2017</ion-item-divider>\n    <ion-item>Angiolgista</ion-item>\n    <ion-item-divider color="light" class="data">25/08/2017</ion-item-divider>\n    <ion-item>Pediatra</ion-item>\n  </ion-item-group>\n</ion-content>\n'/*ion-inline-end:"C:\Users\grmir\Desktop\ABBVIE\app\src\pages\historico-consulta\historico-consulta.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+], HistoricoConsultaPage);
+
+var _a, _b;
+//# sourceMappingURL=historico-consulta.js.map
 
 /***/ }),
 

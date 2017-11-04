@@ -1,3 +1,4 @@
+import { HistoricoPage } from './../historico/historico';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
@@ -5,6 +6,7 @@ import { CadastroExamePage } from '../cadastro-exame/cadastro-exame';
 import { CadastroConsultaPage } from '../cadastro-consulta/cadastro-consulta';
 import { MedicosEClinicasPage } from '../medicos-e-clinicas/medicos-e-clinicas';
 import { GerarCodigoPage } from '../gerar-codigo/gerar-codigo';
+import { HistoricoConsultaPage } from '../historico-consulta/historico-consulta';
 
 @Component({
   selector: 'page-home',
@@ -33,5 +35,11 @@ export class HomePage {
 
   gerarCodigo() {
     this.navCtrl.push(GerarCodigoPage);
+  }
+  historicoExame() {
+    this.navCtrl.push(HistoricoPage);
+  }
+  historicoConsulta() {
+    this.navCtrl.push(HistoricoConsultaPage);
   }
 }
