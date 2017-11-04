@@ -6,17 +6,17 @@ import { CameraProvider } from '../../providers/camera/camera';
 import { Documento } from '../../model/documento';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 /**
- * Generated class for the CadastroExamePage page.
+ * Generated class for the CadastroConsultaPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-cadastro-exame',
-  templateUrl: 'cadastro-exame.html',
+  selector: 'page-cadastro-consulta',
+  templateUrl: 'cadastro-consulta.html',
 })
-export class CadastroExamePage {
+export class CadastroConsultaPage {
 
   private documento: Documento = new Documento();
   constructor(
@@ -33,10 +33,13 @@ export class CadastroExamePage {
   ionViewDidLoad() {
   }
 
-  capturar() {
-    this.camera.capturar(imagem => this.documento.exame = imagem);
+  capturarReceita() {
+    this.camera.capturar(imagem => this.documento.receita = imagem);
   }
 
+  capturarMedicamento() {
+    this.camera.capturar(imagem => this.documento.medicamentos = imagem);
+  }
   presentPopover(myEvent) {
     let popover = this.popoverCtrl.create(MsgInformativaPage, { msg: 'código que tem presente na receita', titulo: 'o que é CRM?' });
     popover.present({

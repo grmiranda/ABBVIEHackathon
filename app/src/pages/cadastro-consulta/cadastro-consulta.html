@@ -1,5 +1,5 @@
 <!--
-  Generated template for the CadastroExamePage page.
+  Generated template for the CadastroConsultaPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Cadastrar Exame</ion-title>
+    <ion-title>Cadastro Consulta</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -26,23 +26,35 @@
     </ion-col>
   </ion-row>
   <ion-item>
-    <ion-label>Data de exame
+    <ion-label>Data de consulta
     </ion-label>
     <ion-datetime displayFormat="DD/MM/YYYY  HH:mm" [(ngModel)]="documento.data"></ion-datetime>
   </ion-item>
   <ion-item>
     <ion-row>
       <ion-col col-9>
-        <h2>Exame</h2>
+        <h2>Receita</h2>
       </ion-col>
       <ion-col>
-        <a (click)="capturar()">Capturar</a>
+        <a (click)="capturarReceita()">Capturar</a>
       </ion-col>
     </ion-row>
   </ion-item>
   <ion-item>
-    <ion-img width="500" height="300" src={{documento.exame}}></ion-img>
+    <ion-img width="500" height="300" src={{documento.receita}}></ion-img>
   </ion-item>
-
+  <ion-item>
+    <ion-row>
+      <ion-col col-9>
+        <h2>Medicamentos utilizados</h2>
+      </ion-col>
+      <ion-col>
+        <a (click)="capturarMedicamento()">Capturar</a>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <ion-item>
+    <ion-img width="500" height="300" src={{documento.medicamentos}}></ion-img>
+  </ion-item>
   <button ion-button full style="margin-top: 50px" (click)="enviar()">Enviar</button>
 </ion-content>

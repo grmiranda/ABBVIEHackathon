@@ -14,6 +14,12 @@ import { CadastroExamePage } from '../pages/cadastro-exame/cadastro-exame';
 import { MsgInformativaPage } from '../pages/msg-informativa/msg-informativa';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { CameraProvider } from '../providers/camera/camera';
+import { CadastroConsultaPage } from '../pages/cadastro-consulta/cadastro-consulta';
+import { MedicosEClinicasPage } from '../pages/medicos-e-clinicas/medicos-e-clinicas';
+import { CidadePage } from '../pages/cidade/cidade';
+import { GerarCodigoPage } from '../pages/gerar-codigo/gerar-codigo';
+import { ChatPage } from '../pages/chat/chat';
+import { HistoricoPage } from '../pages/historico/historico';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJpQtdB9cDhufYCwSQXvsGGRs0HKFEdzs",
@@ -30,6 +36,12 @@ const firebaseConfig = {
     HomePage,
     CadastroExamePage,
     MsgInformativaPage,
+    CadastroConsultaPage,
+    MedicosEClinicasPage,
+    CidadePage,
+    GerarCodigoPage,
+    ChatPage,
+    HistoricoPage,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +56,12 @@ const firebaseConfig = {
     HomePage,
     CadastroExamePage,
     MsgInformativaPage,
+    CadastroConsultaPage,
+    MedicosEClinicasPage,
+    CidadePage,
+    GerarCodigoPage,
+    ChatPage,
+    HistoricoPage,
   ],
   providers: [
     StatusBar,
