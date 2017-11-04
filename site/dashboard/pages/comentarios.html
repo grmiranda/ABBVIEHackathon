@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GlobalMed</title>
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="shortcut icon" href="../images/favicon.png" />
+</head>
+
+<body>
+    <div class=" container-scroller">
+        <!--Navbar-->
+        <nav class="navbar bg-primary-gradient col-lg-12 col-12 p-0 fixed-top navbar-inverse d-flex flex-row">
+            <div class="bg-white text-center navbar-brand-wrapper">
+                <a class="navbar-brand brand-logo" href="#">
+                    <img src="../images/logo_star_black.png" />
+                </a>
+                <a class="navbar-brand brand-logo-mini" href="#">
+                    <img src="../images/logo_star_mini.jpg" alt="">
+                </a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center">
+                <button class="navbar-toggler navbar-toggler hidden-md-down align-self-center mr-3" type="button" data-toggle="minimize">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="form-inline mt-2 mt-md-0 hidden-md-down">
+                    <input class="form-control mr-sm-2 search" type="text" placeholder="Search">
+                </form>
+                <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link profile-pic" href="#">
+                            <img class="rounded-circle" src="../images/5.png" alt="">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-th"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right hidden-lg-up align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <!--End navbar-->
+        <div class="container-fluid">
+            <div class="row row-offcanvas row-offcanvas-right">
+                <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar">
+                    <div class="user-info">
+                        <img src="../images/5.png" alt="">
+                        <p class="name">Richard V.Welsh</p>
+                        <p class="designation">Dermatologista</p>
+                        <span class="online"></span>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                <!-- <i class="fa fa-dashboard"></i> -->
+                                <img src="../images/icons/1.png" alt="">
+                                <span class="menu-title">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                <!-- <i class="fa fa-address-book"></i> -->
+                                <img src="../images/icons/9.png" alt="">
+                                <span class="menu-title">Cadastrar
+                                    <i class="fa fa-sort-down"></i>
+                                </span>
+                            </a>
+                            <div class="collapse" id="collapseExample">
+                                <ul class="nav flex-column sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../pages/formConsulta.html">
+                                            Consulta
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../pages/formReceita.html">
+                                            Receita
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../pages/formExame.html">
+                                            Exame
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="buscarHistorico.html">
+                                    <!-- <i class="fa fa-font"></i> -->
+                                    <img src="../images/icons/6.png" alt="">
+                                    <span class="menu-title">Buscar histórico</span>
+                                </a>
+                            </li>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- SIDEBAR ENDS -->
+                
+                <div class="container">
+                    <div class="align-items-center" style="margin-left: 190px;">
+                        <div class="">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span class="glyphicon glyphicon-comment"></span> Chat
+                                    <div class="btn-group pull-right">
+                                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                            <span class="glyphicon glyphicon-chevron-down"></span>
+                                        </button>
+                                        <ul class="dropdown-menu slidedown">
+                                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+                                            </span>Atualizar</a></li>
+                                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+                                            </span>Disponível</a></li>
+                                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+                                            </span>Ocupado</a></li>
+                                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+                                                Distante</a></li>
+                                            <li class="divider"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="chat">
+                                        <li class="left clearfix"><span class="chat-img pull-left">
+                                            <img src="http://placehold.it/50/55C1E7/fff&text=M" alt="User Avatar" class="img-circle" />
+                                        </span>
+                                            <div class="chat-body clearfix">
+                                                <div class="header">
+                                                    <strong class="primary-font">Mariana</strong> <small class="pull-right text-muted">
+                                                        <span class="glyphicon glyphicon-time"></span>49 mins</small>
+                                                </div>
+                                                <p>
+                                                    Olá. Estou com dúvida sobre o uso da pomada, quanto eu devo colocar na pele?
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="right clearfix"><span class="chat-img pull-right">
+                                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                                        </span>
+                                            <div class="chat-body clearfix">
+                                                <div class="header">
+                                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>20 mins</small>
+                                                    <strong class="pull-right primary-font">Richard</strong>
+                                                </div>
+                                                <p>
+                                                    Oi Mariana, você deve aplicar a pomada numa região um pouco maior que a área afetada, formando uma leve camada.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="left clearfix"><span class="chat-img pull-left">
+                                            <img src="http://placehold.it/50/55C1E7/fff&text=M" alt="User Avatar" class="img-circle" />
+                                        </span>
+                                            <div class="chat-body clearfix">
+                                                <div class="header">
+                                                    <strong class="primary-font">Mariana</strong> <small class="pull-right text-muted">
+                                                        <span class="glyphicon glyphicon-time"></span>14 mins</small>
+                                                </div>
+                                                <p>
+                                                    Muito obrigado dr.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="right clearfix"><span class="chat-img pull-right">
+                                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                                        </span>
+                                            <div class="chat-body clearfix">
+                                                <div class="header">
+                                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>5 mins</small>
+                                                    <strong class="pull-right primary-font">Richard</strong>
+                                                </div>
+                                                <p>                                                    
+                                                    Não há de quê, qualquer dúvida, podemos manter o contato por aqui até o fim do tratamento.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="input-group">
+                                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Escreva sua mensagem aqui..." />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                                Enviar</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../js/bootstrap-select.js"></script>
+    <script src="../node_modules/chart.js/dist/Chart.min.js"></script>
+    <script src="../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/off-canvas.js"></script>
+    <script src="../js/hoverable-collapse.js"></script>
+    <script src="../js/misc.js"></script>
+</body>
+
+</html>
