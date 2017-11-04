@@ -13,11 +13,9 @@
 </ion-header>
 
 
-<ion-content >
+<ion-content>
   <ion-item-group>
     <ion-item-divider color="light" class="data">12/08/2017</ion-item-divider>
-    <ion-item>Angiolgista</ion-item>
-    <ion-item-divider color="light" class="data">25/08/2017</ion-item-divider>
-    <ion-item>Pediatra</ion-item>
+    <ion-item *ngFor="let consulta of consultas" (click)="visualizar(consulta)">{{consulta.especialista}}</ion-item>
   </ion-item-group>
 </ion-content>

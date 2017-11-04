@@ -4,5 +4,6 @@ export class Documento {
     public data = "";
     public receita = "";
     public exame = "";
+    public especialista = "";
     public medicamentos = "";
 }

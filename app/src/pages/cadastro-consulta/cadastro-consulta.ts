@@ -33,6 +33,13 @@ export class CadastroConsultaPage {
   ionViewDidLoad() {
   }
 
+  presentPopoverEspe(myEvent) {
+    let popover = this.popoverCtrl.create(MsgInformativaPage, { msg: 'Ex.: cardiologista', titulo: 'o que é Especialidade?' });
+    popover.present({
+      ev: myEvent
+    });
+  }
+
   capturarReceita() {
     this.camera.capturar(imagem => this.documento.receita = imagem);
   }

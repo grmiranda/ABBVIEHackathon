@@ -25,6 +25,17 @@
       <ion-icon style="margin-top: 40px" ios="ios-help" md="md-help" (click)="presentPopover($event)"></ion-icon>
     </ion-col>
   </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label color="primary" floating>Especialidade</ion-label>
+        <ion-input [(ngModel)]="documento.especialista"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col col-1>
+      <ion-icon style="margin-top: 40px" ios="ios-help" md="md-help" (click)="presentPopoverEspe($event)"></ion-icon>
+    </ion-col>
+  </ion-row>
   <ion-item>
     <ion-label>Data de consulta
     </ion-label>

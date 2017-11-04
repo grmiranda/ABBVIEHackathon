@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { NavController, NavParams } from 'ionic-angular';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
+import { VisualizarConsultaPage } from '../visualizar-consulta/visualizar-consulta';
 /**
  * Generated class for the HistoricoConsultaPage page.
  *
@@ -14,11 +15,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HistoricoConsultaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private consultas = [];
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public fbProvider: FirebaseProvider
+  ) {
+    this.fbProvider.getdocument().subscribe(res => this.consultas = res);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HistoricoConsultaPage');
+  }
+
+  visualizar(consulta) {
+    this.navCtrl.push(VisualizarConsultaPage, { consulta });
   }
 
 }
