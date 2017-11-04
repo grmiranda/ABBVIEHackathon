@@ -24,12 +24,24 @@ export class FirebaseProvider {
     });
   }
 
+  enviarMsg(msg){
+    return this.afdb.list('/mensagem/').push(msg);    
+  }
+
+  getMensagem(){
+    return this.afdb.list('/mensagem/');    
+  }
+
   getdocument() {
     return this.afdb.list(`/documentos/`);
   }
 
   addDocumento(documento) {
     return this.afdb.list('/documentos/').push(documento);
+  }
+
+  addCodigo(codigo) {
+    return this.afdb.list('/codigo/').push(codigo);
   }
 
 

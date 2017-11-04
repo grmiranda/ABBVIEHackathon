@@ -18,6 +18,7 @@ import { CadastroConsultaPage } from '../pages/cadastro-consulta/cadastro-consul
 import { MedicosEClinicasPage } from '../pages/medicos-e-clinicas/medicos-e-clinicas';
 import { CidadePage } from '../pages/cidade/cidade';
 import { GerarCodigoPage } from '../pages/gerar-codigo/gerar-codigo';
+import { ChatPage } from '../pages/chat/chat';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJpQtdB9cDhufYCwSQXvsGGRs0HKFEdzs",
@@ -37,7 +38,8 @@ const firebaseConfig = {
     CadastroConsultaPage,
     MedicosEClinicasPage,
     CidadePage,
-    GerarCodigoPage
+    GerarCodigoPage,
+    ChatPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ const firebaseConfig = {
     CadastroConsultaPage,
     MedicosEClinicasPage,
     CidadePage,
-    GerarCodigoPage
+    GerarCodigoPage,
+    ChatPage
   ],
   providers: [
     StatusBar,

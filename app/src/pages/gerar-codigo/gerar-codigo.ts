@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 /**
  * Generated class for the GerarCodigoPage page.
@@ -16,7 +17,11 @@ export class GerarCodigoPage {
 
   private tempo = "";
   private codigo = "";
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private fbProvidade: FirebaseProvider
+  ) {
   }
 
   ionViewDidLoad() {
@@ -30,7 +35,8 @@ export class GerarCodigoPage {
     for (var i = 0; i < 5; i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-    this.codigo = text;
+      this.codigo = text;
+      this.fbProvidade.addCodigo({tempo: this.tempo, codigo: this.codigo, cpf: localStorage.getItem('cpf')});
   }
 
 

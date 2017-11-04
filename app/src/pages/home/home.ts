@@ -14,6 +14,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, fbProvider: FirebaseProvider
   ) {
+    localStorage.setItem('cpf', '000.000.000-00');
     // fbProvider.addDocumento({ cliente: 'teste' }).then(value => console.log(value.key));
 
   }
