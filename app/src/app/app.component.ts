@@ -10,7 +10,7 @@ import { HistoricoConsultaPage } from '../pages/historico-consulta/historico-con
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HistoricoConsultaPage;
+  rootPage: any = HistoricoPage;
 
   constructor(
     platform: Platform, statusBar: StatusBar,
