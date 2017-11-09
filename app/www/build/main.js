@@ -326,6 +326,7 @@ var Documento = (function () {
         this.paciente = localStorage.getItem('cpf');
         this.data = "";
         this.receita = "";
+        this.comentario = "";
         this.exame = "";
         this.especialista = "";
         this.medicamentos = "";
@@ -981,7 +982,7 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_historico_historico__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(348);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -998,7 +999,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_historico_historico__["a" /* HistoricoPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -1011,10 +1012,10 @@ var MyApp = (function () {
 MyApp = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"D:\workSpace\testes\hackathonAbbvie\app\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"D:\workSpace\testes\hackathonAbbvie\app\src\app\app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */],
-        __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _c || Object])
 ], MyApp);
 
+var _a, _b, _c;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -1079,7 +1080,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"D:\workSpace\testes\hackathonAbbvie\app\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary" class="center">\n\n    <img src="./images/logo.png" class="logo">\n\n    <p>das</p>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item  class="cardButton blue" (click)="cadastrarExame()">\n\n            <p class="cardTitle">Cadastrar</p>\n\n            <p class="cardTitle">Exame</p>\n\n            <img class="cardImage" src="./images/exame.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton green" (click)="cadastroConsulta()">\n\n          <p class="cardTitle">Cadastrar</p>\n\n          <p class="cardTitle">Consulta</p>\n\n          <img class="cardImage" src="./images/consulta.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton orange" (click)="abrirMedicos()">\n\n          <p class="cardTitle">Lista de Medicos</p>\n\n          <p class="cardTitle">Clinicas</p>\n\n          <img class="cardImage" src="./images/lupa.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton purple" (click)="gerarCodigo()">\n\n          <p class="cardTitle">Gerar</p>\n\n          <p class="cardTitle">Codigo</p>\n\n          <img class="cardImage" src="./images/engrenagem.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <p class="textInfo" >Acesse seu histórico</p>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton yellow" (click)="historicoExame()">\n\n          <p class="cardTitle">Histórico de</p>\n\n          <p class="cardTitle">Exames</p>\n\n          <img class="cardImage" src="./images/hexame.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton gray" (click)="historicoConsulta()">\n\n          <p class="cardTitle">Histórico de</p>\n\n          <p class="cardTitle">Consultas</p>\n\n          <img class="cardImage" src="./images/hconsulta.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\workSpace\testes\hackathonAbbvie\app\src\pages\home\home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"D:\workSpace\testes\hackathonAbbvie\app\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar color="primary" class="center">\n\n    <img src="./images/logo.png" class="logo">\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item  class="cardButton blue" (click)="cadastrarExame()">\n\n            <p class="cardTitle">Cadastrar</p>\n\n            <p class="cardTitle">Exame</p>\n\n            <img class="cardImage" src="./images/exame.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton green" (click)="cadastroConsulta()">\n\n          <p class="cardTitle">Cadastrar</p>\n\n          <p class="cardTitle">Consulta</p>\n\n          <img class="cardImage" src="./images/consulta.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton orange" (click)="abrirMedicos()">\n\n          <p class="cardTitle">Lista de Medicos</p>\n\n          <p class="cardTitle">Clinicas</p>\n\n          <img class="cardImage" src="./images/lupa.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton purple" (click)="gerarCodigo()">\n\n          <p class="cardTitle">Gerar</p>\n\n          <p class="cardTitle">Codigo</p>\n\n          <img class="cardImage" src="./images/engrenagem.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n  <p class="textInfo" >Acesse seu histórico</p>\n\n  <ion-grid>\n\n    <ion-row>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton yellow" (click)="historicoExame()">\n\n          <p class="cardTitle">Histórico de</p>\n\n          <p class="cardTitle">Exames</p>\n\n          <img class="cardImage" src="./images/hexame.png">\n\n        </ion-item>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item class="cardButton gray" (click)="historicoConsulta()">\n\n          <p class="cardTitle">Histórico de</p>\n\n          <p class="cardTitle">Consultas</p>\n\n          <img class="cardImage" src="./images/hconsulta.png">\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\workSpace\testes\hackathonAbbvie\app\src\pages\home\home.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__providers_firebase_firebase__["a" /* FirebaseProvider */]])
 ], HomePage);
